@@ -208,6 +208,32 @@ p {
 .contact-info-box[href^="mailto:"]{ text-decoration:underline; } 
 .contact-info-box:hover{ background:#7a7a7a; color:#fff; }
 
+/* === Back-to-top gumb === */
+.back-to-top{
+  position: fixed; right: 16px; bottom: 16px;
+  width: 44px; height: 44px; border-radius: 999px;
+  background: var(--green); color:#fff; border: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  display: grid; place-items: center;
+  cursor: pointer; opacity: 0; pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  transform: translateY(8px);
+}
+.back-to-top.show{ opacity:1; pointer-events:auto; transform: translateY(0); }
+
+/* === Dark tema: prepiši spremenljivke === */
+html.dark {
+  --bg: #1e1f1c;
+  --text: #ece8dc;
+  --green: #7db67a;
+  --stroke: #34342f;
+  --light-green-bg: rgba(125,182,122,.2);
+}
+html.dark .app-header,
+html.dark .app-footer { background: var(--bg); border-color: var(--stroke); }
+html.dark .nav-link { color: var(--text); }
+html.dark .section-highlight { background: #2a2a26; }
+
 
 
 
