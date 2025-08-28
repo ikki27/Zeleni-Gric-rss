@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* ---------- OSNOVNE SPREMENLJIVKE IN STILI ---------- */
+:root {
+  --bg: #F8F4E9;
+  --text: #3d3d3d;
+  --green: #5a7247;
+  --stroke: #e0ddd7;
+  --light-green-bg: rgba(90, 114, 71, .15);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;  
+}
+
+/* ---------- ODZIVEN OKVIR (SAMO ZA VSEBINO) ---------- */
+.frame {
+  width: 100%;
+  max-width: 960px; /* Enotna širina za vsebino na večjih zaslonih */
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- GLAVA (HEADER) ---------- */
+.app-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--bg);
+  border-bottom: 2px solid var(--stroke);
+  z-index: 1030;
+  padding: 0.5rem 0;
+}
+
+.logo {
+  height: 60px;
+}
+
+.navbar-toggler {
+  border: 0;
+  box-shadow: none !important;
+}
+
+/* ---------- NAVIGACIJSKI MENI ---------- */
+.nav-link {
+    font-weight: 700;
+    color: var(--text);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    margin: 0 0.25rem;
+    transition: all 0.2s ease-in-out;
+}
+.nav-link.active, .nav-link:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+/* === TUKAJ JE POPRAVEK === */
+/* Mobilni meni (overlay) */
+@media (max-width: 991.98px) {
+  /* Stil se uporabi samo, ko je meni odprt (ima razred .show) */
+  .navbar-collapse.show {
+    position: fixed;
+    inset: 0;
+    background: rgba(248, 244, 233, .95);
+    backdrop-filter: blur(5px);
+    display: flex !important; /* Tukaj je !important v redu, ker velja samo za odprto stanje */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Stili za elemente znotraj menija ostanejo enaki */
+  .navbar-nav { width: 100%; max-width: 380px; }
+  .nav-item { margin: 12px 0; }
+  .nav-link {
+    background: var(--light-green-bg);
+    text-align: center;
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
+/* === KONEC POPRAVKA === */
+
+/* ---------- GLAVNA SLIKA (HERO) - KONČNI POPRAVEK ---------- */
+.hero-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-top: 80px; /* Prilagojeno za višino fiksne glave */
+}
+
+
+/* ---------- VSEBINA STRANI ---------- */
+.content-section {
+  padding: 48px 0;
+}
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+p {
+  line-height: 1.7;
+  font-size: 1rem;
+}
+.content-img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,.1);
+}
+
+/* ---------- NOGA (FOOTER) ---------- */
+.app-footer {
+  padding: 2.5rem 0;
+  border-top: 2px solid var(--stroke);
+  background: var(--bg);
+}
+.footer-links, .footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links a, .footer-contact span {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.footer-links li, .footer-contact li {
+  margin-bottom: 0.5rem;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+.footer-contact li:first-child span {
+  font-weight: 700;
+}
+
+/* ---------- DOMAČA STRAN (INDEX.HTML) SPECIFIČNI STILI ---------- */
+
+/* Glavna slika na vrhu strani */
+.hero-section {
+  padding-top: 82px; /* Odmik zaradi fiksne glave */
+}
+
+.hero-section-image {
+  width: 100%;
+  height: 85vh;
+  object-fit: cover;
+}
+
+/* Temen sloj čez glavno sliko za boljšo berljivost besedila */
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Gumb po meri v zeleni barvi */
+.btn-custom-green {
+  background-color: var(--green);
+  color: white;
+  border-color: white; /* Dodan za konsistentnost */
+  padding: 0.75rem 1.5rem; /* Malo večji gumb */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-custom-green:hover {
+  background-color: #4a613a; /* Rahlo temnejša zelena ob prehodu miške */
+  color: white;
+}
+
+/* Sekcija s poudarjenim ozadjem */
+.section-highlight {
+  background-color: var(--stroke);
+}
+
+/* ---------- KATEGORIJE (TRGOVINA) ---------- */ 
+.category-list{ display:flex; flex-direction:column; gap:12px; } 
+.category-card{ display:flex; align-items:center; justify-content:flex-start; 
+  background:#26523096; 
+  border-radius:20px; overflow:hidden; text-decoration:none; color:#fff; 
+    box-shadow:0 4px 10px rgba(0,0,0,.08); 
+    min-height:76px; padding-right:12px; } 
+.category-label{ background:#2C2C2C; color:#fff; 
+    font-weight:400; font-size:1rem; text-align:center; 
+    padding:12px 16px; min-width:150px; border-radius:20px; 
+    margin:12px; } 
+.category-image{ height:80px; margin-left:auto; display:block; }
+
+/* ---------- IZDELKI (SEZNAM) ---------- */ 
+.product-list{ display:flex; flex-direction:column; gap:12px; } 
+.product-card{ display:flex; align-items:center; justify-content:flex-start; background: #373B3D99; 
+    border-radius:20px; overflow:hidden; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,.08); 
+    min-height:76px; padding-right:12px; } 
+.product-label{ background: #25532F; color:#fff; font-weight:400; border-radius:20px; text-align:center; 
+    margin:14px; min-width:150px; padding:12px 16px; font-size:1rem; } 
+.product-image{ height:80px; margin-left:auto; display:block; } 
+
+/* ---------- KONTAKT ---------- */ 
+.contact-list{ display:flex; flex-direction:column; gap:18px; } 
+.contact-label{ font-weight:800; font-size:1.05rem; color:#3d3d3d; margin:0 0 6px; 
+    text-shadow:0 1px 2px rgba(0,0,0,.15); } 
+.contact-info-box{ display:block; text-align:center; font-weight:700; font-size:1.05rem; 
+    background:#8a8a8a; color:#fff; border-radius:20px; padding:.85rem 1rem; text-decoration:none; 
+    box-shadow:0 4px 10px rgba(0,0,0,.1); } 
+.contact-info-box[href^="mailto:"]{ text-decoration:underline; } 
+.contact-info-box:hover{ background:#7a7a7a; color:#fff; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
