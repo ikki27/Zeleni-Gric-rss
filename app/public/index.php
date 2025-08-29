@@ -59,10 +59,10 @@ include __DIR__ . '/includes/header.php'; // to že vključi nav
 
         <div class="col">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="/src/images/PredelaniIzdelki.png" class="card-img-top" alt="Domači med">
+            <img src="/src/images/PredelaniIzdelki.png" class="card-img-top" alt="Domača marmelada">
             <div class="card-body text-center">
-              <h5 class="card-title fw-bold">Domači Med</h5>
-              <p class="card-text">Zlati nektar naših pridnih čebel, poln naravne sladkosti in zdravja.</p>
+              <h5 class="card-title fw-bold">Domača marmelada</h5>
+              <p class="card-text">Zlata, ter sladka, poln naravne sladkosti in zdravja.</p>
             </div>
           </div>
         </div>
