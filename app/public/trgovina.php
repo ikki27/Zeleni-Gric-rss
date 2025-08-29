@@ -7,8 +7,12 @@ include __DIR__ . '/includes/header.php'; // to že vključi nav
   <div class="content-section">
     <h1 class="section-title">Naši izdelki</h1>
 
-    <!-- Odzivna mreža za kategorije -->
-    <div class="row row-cols-1 row-cols-md-2 g-3">
+    <!-- 
+      POPRAVEK: Odstranjen je razred "row-cols-md-2".
+      Zdaj bo "row-cols-1" veljal za vse velikosti zaslona,
+      kar pomeni, da bo vedno samo en stolpec (vertikalna postavitev).
+    -->
+    <div class="row row-cols-1 g-3">
       <div class="col">
         <a href="zelenjava.php" class="category-card">
           <span class="category-label">Zelenjava</span>
